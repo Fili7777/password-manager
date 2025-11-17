@@ -2,6 +2,7 @@ if (document.getElementById("loginForm")) {
   const passwordInput = document.getElementById("password");
   const togglePassword = document.getElementById("togglePassword");
 
+  // permette di nascondere o mostrare password
   togglePassword.addEventListener("click", () => {
     if (passwordInput.type === "password") {
       passwordInput.type = "text"; // mostra la password
@@ -20,6 +21,7 @@ if (document.getElementById("registerForm")) {
     "togglePasswordRegister"
   );
 
+  // permette di nascondere o mostrare password
   togglePasswordRegister.addEventListener("click", () => {
     if (passwordInput.type === "password") {
       passwordInput.type = "text";
