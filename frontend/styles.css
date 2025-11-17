@@ -1,0 +1,30 @@
+/* =====================
+   INDEX PAGE
+===================== */
+.header {
+  text-align: center;
+  color: #333;
+}
+
+/* =====================
+   LOGIN PAGE
+===================== */
+#loginForm {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* =====================
+   REGISTER PAGE
+===================== */
+#registerForm {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* =====================
+   DASHBOARD PAGE
+===================== */
+#dashboard {
+  padding: 20px;
+}
