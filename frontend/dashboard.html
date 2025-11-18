@@ -1,10 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard</title>
+    <title>CF - Dashboard</title>
+    <script src="main.js" defer></script>
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body></body>
+  <body>
+    <div id="dashboard">
+      <h1>Le tue password</h1>
+      <button id="logoutBtn">Logout</button>
+
+      <h2>Elenco password salvate</h2>
+
+      <div id="passwordList">
+        <!-- Qui JS inserirà le password -->
+      </div>
+
+      <button id="addPasswordBtn">Aggiungi nuova password</button>
+
+      <!-- Form per aggiungere nuova password -->
+      <div id="addPasswordForm" style="display: none; margin-top: 20px">
+        <h3>Aggiungi Password</h3>
+        <label for="newSite">Sito/App:</label><br />
+        <input type="text" id="newSite" /><br /><br />
+
+        <label for="newUser">Utente:</label><br />
+        <input type="text" id="newUser" /><br /><br />
+
+        <label for="newPass">Password:</label><br />
+        <input type="text" id="newPass" /><br /><br />
+
+        <button id="savePasswordBtn">Salva Password</button>
+        <button id="cancelPasswordBtn">Annulla</button>
+      </div>
+    </div>
+  </body>
 </html>
