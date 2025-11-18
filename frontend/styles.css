@@ -1,30 +1,203 @@
 /* =====================
-   INDEX PAGE
+   GLOBAL DARK THEME
 ===================== */
-.header {
+:root {
+  --bg: #0f0f11;
+  --card-bg: #1c1d22;
+  --accent: #4a5cff;
+  --accent-hover: #3d4ee0;
+  --text: #e4e4e4;
+  --text-muted: #aaa;
+  --border: #2a2b31;
+  --radius: 12px;
+  --shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+}
+
+body {
+  margin: 0;
+  padding: 40px 16px;
+  font-family: "Inter", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* centra verticalmente la pagina */
+  min-height: 100vh;
   text-align: center;
-  color: #333;
 }
 
 /* =====================
-   LOGIN PAGE
+   TITLES
 ===================== */
-#loginForm {
-  max-width: 400px;
-  margin: 0 auto;
+h1, h2, h3 {
+  margin-top: 12px;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 34px;
+  margin-bottom: 18px;
+}
+
+h2 {
+  color: var(--text-muted);
+  font-size: 18px;
 }
 
 /* =====================
-   REGISTER PAGE
+   BUTTONS
 ===================== */
+button {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 10px 22px;
+  margin: 10px 8px;
+  border-radius: var(--radius);
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.25s;
+  display: inline-block;
+}
+
+button:hover {
+  background: var(--accent-hover);
+}
+
+/* =====================
+   FORMS & CARD SIZING FIX
+   (separa il contenitore esterno dal form interno)
+===================== */
+
+/* Contenitore esterno: la "card" */
+.form-container {
+  background: var(--card-bg);
+  padding: 26px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  max-width: 360px;
+  width: 100%;
+  margin: 8px auto;
+  box-sizing: border-box;
+}
+
+/* Il form interno non deve replicare la card */
+#loginForm,
 #registerForm {
-  max-width: 400px;
-  margin: 0 auto;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  box-shadow: none;
+  border: none;
+  text-align: left;
+}
+
+/* form layout */
+form label {
+  display: block;
+  margin: 6px 0 8px;
+  font-weight: 600;
+  color: var(--text);
+  font-size: 14px;
+}
+
+/* Inputs: prendono tutta la larghezza della card (inclusi text, email, password) */
+#loginForm input,
+#registerForm input,
+.password-wrapper input {
+  width: 100%;
+  height: 44px;
+  padding: 10px 12px;
+  margin: 0 0 16px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: #141418;
+  color: var(--text);
+  font-size: 15px;
+  box-sizing: border-box;
+  transition: border 0.25s, box-shadow 0.25s;
+  display: block;
+}
+
+#loginForm input:focus,
+#registerForm input:focus,
+.password-wrapper input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 6px rgba(74, 92, 255, 0.4);
+}
+
+/* Password wrapper: usa tutta la larghezza, icona allineata verticalmente */
+.password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 0 0 16px;
+}
+
+.password-wrapper input {
+  padding-right: 44px; /* spazio per l'icona */
+}
+
+/* Toggle icon: centrata verticalmente */
+.password-toggle {
+  position: absolute;
+  right: 8px;
+  top: 20%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  padding: 6px;
+  transition: color 0.2s;
+}
+
+.password-toggle:hover {
+  color: var(--accent);
+}
+
+.eye-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Submit button centrato, non troppo largo per entrambi i form */
+#loginForm button[type="submit"],
+#registerForm button[type="submit"] {
+  display: block;
+  margin: 12px auto 0;
+  width: auto;
+  padding: 10px 28px;
 }
 
 /* =====================
-   DASHBOARD PAGE
+   LINKS
 ===================== */
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* =====================
+   INDEX / DASHBOARD
+===================== */
+.index-buttons {
+  margin-top: 25px;
+}
+
 #dashboard {
-  padding: 20px;
+  padding: 30px;
+  color: var(--text);
 }

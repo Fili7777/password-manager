@@ -4,22 +4,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CF - Login</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles.css" />
     <script src="main.js" defer></script>
   </head>
   <body>
     <h1>Login</h1>
-    <form id="loginForm">
-      <label for="email">Email:</label><br />
-      <input type="email" id="email" name="email" required /><br /><br />
+<div class="form-container">
+  <form id="loginForm">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required />
 
-      <label for="password">Password:</label><br />
+    <label for="password">Password:</label>
+    <div class="password-wrapper">
       <input type="password" id="password" name="password" required />
-      <button type="button" id="togglePassword">Mostra</button>
+      <button type="button" class="password-toggle" id="togglePassword" aria-label="Mostra password">
+        <svg xmlns="http://www.w3.org/2000/svg" class="eye-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path id="eyeIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+          <path id="eyeOutline" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0 8.268 2.943 9.542 7-1.274 4.057-5.065 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+        </svg>
+      </button>
+    </div>
 
-      <button type="submit">Login</button>
-    </form>
-
+    <button type="submit">Login</button>
+  </form>
+</div>
     <h3><a href="index.html">Torna indietro</a></h3>
   </body>
 </html>
