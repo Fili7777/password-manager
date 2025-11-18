@@ -1,5 +1,5 @@
 <?php
-header('Content-Type: application/json');
+header('Content-Type: application/json; charset=utf-8');
 require 'config.php';
 
 $input = json_decode(file_get_contents("php://input"), true);
@@ -25,7 +25,7 @@ try {
         exit;
     }
 
-    // Funzioni base64url
+    // Funzione base64url
     function base64url_encode($data) {
         return rtrim(strtr(base64_encode($data), '+/', '-_'), '=');
     }
